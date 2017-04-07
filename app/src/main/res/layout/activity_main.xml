@@ -14,21 +14,21 @@
         android:id="@+id/icon-drug"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/icon-drug" />
+        android:src="@drawable/icon_drug" />
 
     <ImageView
         android:id="@+id/icon-food"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_alignParentRight="true"
-        android:src="@drawable/icon-food" />
+        android:src="@drawable/icon_food" />
 
     <ImageView
         android:id="@+id/icon-herb"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_below="@id/icon-drug"
-        android:src="@drawable/icon-herb" />
+        android:src="@drawable/icon_herb" />
 
     <ImageView
         android:id="@+id/icon-help"
@@ -36,6 +36,6 @@
         android:layout_height="150dp"
         android:layout_alignParentRight="true"
         android:layout_below="@id/icon-drug"
-        android:src="@drawable/icon-help" />
+        android:src="@drawable/icon_help" />
 
 </RelativeLayout>
