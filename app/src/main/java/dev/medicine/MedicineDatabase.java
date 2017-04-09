@@ -5,14 +5,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-public class DrugDatabase extends SQLiteOpenHelper {
+public class MedicineDatabase extends SQLiteOpenHelper {
 
     private static final String TAG = "Database";
     private static final String DATABASE_NAME="medicine";
     private static final int DATABASE_VERSION=1;
 
 
-    public DrugDatabase(Context context) {
+    public MedicineDatabase(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -20,6 +20,7 @@ public class DrugDatabase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         createDrugTable(db);
     }
+
 
     //Create Drug Table
     private void createDrugTable(SQLiteDatabase db) {
