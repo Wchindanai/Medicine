@@ -11,31 +11,31 @@
     tools:context="dev.medicine.MainActivity">
 
     <ImageView
-        android:id="@+id/icon-drug"
+        android:id="@+id/icon_drug"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/icon_drug" />
 
     <ImageView
-        android:id="@+id/icon-food"
+        android:id="@+id/icon_food"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_alignParentRight="true"
         android:src="@drawable/icon_food" />
 
     <ImageView
-        android:id="@+id/icon-herb"
+        android:id="@+id/icon_herb"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_below="@id/icon-drug"
+        android:layout_below="@id/icon_drug"
         android:src="@drawable/icon_herb" />
 
     <ImageView
-        android:id="@+id/icon-help"
+        android:id="@+id/icon_help"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/icon-drug"
+        android:layout_below="@id/icon_drug"
         android:src="@drawable/icon_help" />
 
 </RelativeLayout>

@@ -36,11 +36,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String sqlCreateTable = "CREATE TABLE IF NOT EXISTS " + drugTable + " ("
                 + columnId + "INTEGER PRIMARY KEY NOT NULL, "
-                + columnDrugName + "VARCHAR, "
+                + columnDrugName + "TEXT, "
                 + columnHowToUse + "TEXT, "
-                + columnRisk + "VARCHAR, "
+                + columnRisk + "TEXT, "
                 + columnNote + "TEXT, "
-                + columnReference + "TEXT";
+                + columnReference + "TEXT"
+                + ")";
 
         db.execSQL(sqlCreateTable);
         Log.i(TAG, "Drug Table Created");
