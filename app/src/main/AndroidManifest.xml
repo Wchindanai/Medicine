@@ -4,11 +4,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon_app"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity_launch_screen"
+        <activity
+            android:name=".activity_launch_screen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,9 +18,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    </application>
 
+        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+        <activity android:name=".activity_drug" />
+        <activity android:name=".activity_herb" />
+        <activity android:name=".activity_food" />
+        <activity android:name=".activity_help"></activity>
+    </application>
 
 </manifest>
