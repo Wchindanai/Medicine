@@ -10,36 +10,36 @@
     android:paddingTop="30dp"
     tools:context="dev.medicine.MainActivity">
 
-    <ImageView
+    <ImageButton
         android:id="@+id/icon_drug"
         android:layout_margin="10dp"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/icon_drug" />
+        android:background="@drawable/icon_drug" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/icon_food"
         android:layout_margin="10dp"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_alignParentRight="true"
-        android:src="@drawable/icon_food" />
+        android:background="@drawable/icon_food" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/icon_herb"
         android:layout_margin="10dp"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_below="@id/icon_drug"
-        android:src="@drawable/icon_herb" />
+        android:background="@drawable/icon_herb" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/icon_help"
         android:layout_margin="10dp"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_alignParentRight="true"
         android:layout_below="@id/icon_drug"
-        android:src="@drawable/icon_help" />
+        android:background="@drawable/icon_help" />
 
 </RelativeLayout>
