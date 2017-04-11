@@ -4,11 +4,55 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="10dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="10dp"
+    android:background="@drawable/pastel_wallpaper"
     tools:context="dev.medicine.MainActivity">
 
-    <ImageView
+    <TextView
+        android:id="@+id/title_name"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/launch_screen_2" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="36dp"
+        android:gravity="center"
+        android:textColor="@color/cardview_dark_background"
+        android:text="MOMMY DRUG"/>
+    <TextView
+        android:id="@+id/title_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:gravity="center"
+        android:layout_below="@+id/title_name"
+        android:layout_marginTop="60dp"
+        android:textSize="20dp"
+        android:textColor="@color/cardview_light_background"
+        android:background="@color/cardview_dark_background"
+        android:text="รายละเอียดเกี่ยวกับแอพพลิเคชั่น" />
+    <TextView
+        android:id="@+id/detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:layout_below="@id/title_detail"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/cardview_dark_background"
+        android:background="@color/cardview_light_background"
+        android:text="รายละเอียด" />
+    <ImageButton
+        android:id="@+id/icon_start"
+        android:layout_width="520dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/start_button"/>
 
 </RelativeLayout>

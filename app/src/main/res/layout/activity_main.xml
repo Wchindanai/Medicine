@@ -8,14 +8,18 @@
     android:paddingLeft="30dp"
     android:paddingRight="30dp"
     android:paddingTop="30dp"
+    android:background="@drawable/pastel_wallpaper"
     tools:context="dev.medicine.MainActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
     <ImageButton
         android:id="@+id/icon_drug"
         android:layout_margin="10dp"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:background="@drawable/icon_drug" />
+        android:background="@drawable/icon_drug_s" />
 
     <ImageButton
         android:id="@+id/icon_food"
@@ -23,7 +27,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_alignParentRight="true"
-        android:background="@drawable/icon_food" />
+        android:background="@drawable/icon_food_s" />
 
     <ImageButton
         android:id="@+id/icon_herb"
@@ -31,7 +35,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_below="@id/icon_drug"
-        android:background="@drawable/icon_herb" />
+        android:background="@drawable/icon_herb_s" />
 
     <ImageButton
         android:id="@+id/icon_help"
@@ -40,6 +44,6 @@
         android:layout_height="150dp"
         android:layout_alignParentRight="true"
         android:layout_below="@id/icon_drug"
-        android:background="@drawable/icon_help" />
+        android:background="@drawable/icon_help_s" />
 
 </RelativeLayout>
