@@ -8,7 +8,6 @@
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
     android:paddingTop="10dp"
-    android:background="@drawable/pastel_wallpaper"
     android:orientation="vertical">
 
     <!-- A CardView that contains a TextView -->
@@ -16,13 +15,12 @@
         android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         card_view:cardCornerRadius="4dp">
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            >
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -39,11 +37,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_toEndOf="@+id/item_image"
                     android:textColor="@color/colorPrimary"
                     android:text="Drug Name"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/item_risk"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_toEndOf="@+id/item_image"
+                    android:layout_below="@+id/item_name"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:text="Item Risk"
+                    android:textSize="20sp"
+                    />
+
             </RelativeLayout>
 
         </LinearLayout>
