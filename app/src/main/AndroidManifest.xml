@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="dev.medicine">
-
+    package="dev.medicine" >
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon_app"
@@ -9,6 +8,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:screenOrientation="portrait"
             android:name=".activity_launch_screen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
@@ -17,16 +17,31 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-
-        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-        <activity android:name=".activity_drug"  />
-        <activity android:name=".activity_herb" />
-        <activity android:name=".activity_food" />
-        <activity android:name=".activity_help" />
-        <activity android:name=".item_detail" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".activity_drug"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".activity_herb"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".activity_food"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".activity_help"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".item_detail"
+            android:screenOrientation="portrait"
+            />
     </application>
+
 
 </manifest>

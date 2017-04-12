@@ -11,57 +11,55 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import static android.R.attr.name;
+import static android.content.ContentValues.TAG;
 
 /**
  * Created by dream on 4/13/2017 AD.
  */
 
-class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
+class FoodRecyclerAdapter extends RecyclerView.Adapter<FoodRecyclerAdapter.ViewHolder> {
+    Context context;
+    List<FoodModel> food_list;
 
-
-    private final Context context;
-    private final List<DrugModel> drug_list;
-
-    public RecyclerAdapter(Context context, List<DrugModel> drug_list) {
+    public FoodRecyclerAdapter(Context context, List<FoodModel> food_list) {
         this.context = context;
-        this.drug_list = drug_list;
+        this.food_list = food_list;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recycleview, parent, false);
         ViewHolder viewHolder = new ViewHolder(v);
-        return  viewHolder;
+        return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.drugImage.setImageResource(R.drawable.icon_drug_s);
-        holder.drugName.setText(drug_list.get(position).getName());
-        holder.drugRisk.setText(drug_list.get(position).getRisk());
+        holder.foodImage.setImageResource(R.drawable.icon_food_s);
+        holder.foodName.setText(food_list.get(position).getName());
+        holder.foodRisk.setText(food_list.get(position).getRisk());
     }
 
     @Override
     public int getItemCount() {
-        return drug_list.size();
+        return food_list.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView drugImage;
-        TextView drugName;
-        TextView drugRisk;
-
+        ImageView foodImage;
+        TextView foodName;
+        TextView foodRisk;
         public ViewHolder(View itemView) {
             super(itemView);
-            drugImage = (ImageView)itemView.findViewById(R.id.item_image);
-            drugName = (TextView)itemView.findViewById(R.id.item_name);
-            drugRisk = (TextView)itemView.findViewById(R.id.item_risk);
+            foodImage = (ImageView)itemView.findViewById(R.id.item_image);
+            foodName = (TextView)itemView.findViewById(R.id.item_name);
+            foodRisk = (TextView)itemView.findViewById(R.id.item_risk);
 
-            itemView.setOnClickListener(new View.OnClickListener(){
+            itemView.setOnClickListener(new View.OnClickListener() {
+
                 @Override
                 public void onClick(View v) {
-
+                    Log.i(TAG, "Food Click Item"+ foodName);
                 }
             });
         }
