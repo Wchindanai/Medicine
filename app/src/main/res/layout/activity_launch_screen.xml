@@ -16,10 +16,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:textSize="36dp"
+        android:textSize="36sp"
         android:gravity="center"
         android:textColor="@color/cardview_dark_background"
-        android:text="MOMMY DRUG"/>
+        android:text="MOMMY DRUG"
+        tools:ignore="HardcodedText" />
     <TextView
         android:id="@+id/title_detail"
         android:layout_width="match_parent"
@@ -31,28 +32,32 @@
         android:gravity="center"
         android:layout_below="@+id/title_name"
         android:layout_marginTop="60dp"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textColor="@color/cardview_light_background"
         android:background="@color/cardview_dark_background"
-        android:text="รายละเอียดเกี่ยวกับแอพพลิเคชั่น" />
+        android:text="รายละเอียดเกี่ยวกับแอพพลิเคชั่น"
+        tools:ignore="HardcodedText" />
+
     <TextView
         android:id="@+id/detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/icon_start"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/title_detail"
+        android:background="@color/cardview_light_background"
         android:paddingBottom="10dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingTop="10dp"
-        android:layout_below="@id/title_detail"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/cardview_dark_background"
-        android:background="@color/cardview_light_background"
-        android:text="รายละเอียด" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        tools:ignore="HardcodedText" />
     <ImageButton
         android:id="@+id/icon_start"
         android:layout_width="520dp"
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/start_button"/>
+        android:background="@drawable/start_button"
+        tools:ignore="ContentDescription" />
 
 </RelativeLayout>
