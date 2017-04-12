@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="application_detail">
-        <p><strong>MOMMY DRUG</strong> เป็นแอพพลิเคชั่นสืบค้นและบริการข้อมูลยาและผลิตภัณฑ์เสริมอาหารสำหรับสตรีให้นมบุตร เพื่อให้สตรีให้นมบุตรสามารถใช้ยาได้อย่างเหมาะสมและมีความปลอดภัย
-        </p>
-        <p><strong>MOMMY DRUG</strong> ประกอบด้วย ข้อมูลความเสี่ยงของยาต่อสตรีให้นมบุตร ข้อบ่งใช้ของยา แหล่งอ้างอิงของข้อมูล โดยจะเห็นผลการสืบค้นเป็นภาษาไทย
-        </p>
-        <p><strong>MOMMY DRUG</strong> ใช้แหล่งข้อมูลจาก 3 แหล่ง คือ
-        </p>
-        <p>1. ฐานข้อมูล e-lactancia จาก Association for Promotion and Cultural and Research of Breastfeeding ประเทศสเปน URL: http://www.e-lactancia.org
-        </p>
-        <p>2. เอกสาร BREASTFEEDING AND MATERNAL MEDICATION Recommendations for Drugs in the Eleven<sup>th</sup> WHO Model List of Essential Drugs โดย Department of Child and Adolescent Health and Development
-        </p>
-        <p>3. หนังสือ A Reference Guide to Fetal and Neonatal Risk Drugs in Pregnancy and Lactation 9<sup>th </sup>Edition
-        </p>
+        MOMMY DRUG เป็นแอพพลิเคชั่นสืบค้นและบริการข้อมูลยาและผลิตภัณฑ์เสริมอาหารสำหรับสตรีให้นมบุตร เพื่อให้สตรีให้นมบุตรสามารถใช้ยาได้อย่างเหมาะสมและมีความปลอดภัย
+MOMMY DRUG ประกอบด้วย ข้อมูลความเสี่ยงของยาต่อสตรีให้นมบุตร ข้อบ่งใช้ของยา แหล่งอ้างอิงของข้อมูล โดยจะเห็นผลการสืบค้นเป็นภาษาไทย
+MOMMY DRUG ใช้แหล่งข้อมูลจาก 3 แหล่ง คือ \n
+1. ฐานข้อมูล e-lactancia จาก Association for Promotion and Cultural and Research of Breastfeeding ประเทศสเปน URL: http://www.e-lactancia.org \n
+2. เอกสาร BREASTFEEDING AND MATERNAL MEDICATION Recommendations for Drugs in the Eleventh WHO Model List of Essential Drugs โดย Department of Child and Adolescent Health and Development \n
+3. หนังสือ A Reference Guide to Fetal and Neonatal Risk Drugs in Pregnancy and Lactation 9th Edition
     </string>
 </resources>

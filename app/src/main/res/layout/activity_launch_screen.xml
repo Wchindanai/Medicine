@@ -42,16 +42,19 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/icon_start"
         android:layout_below="@+id/title_detail">
-    <TextView
-        android:id="@+id/detail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/cardview_light_background"
-        android:paddingBottom="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="10dp"
-        tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/textColorHint"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:text="Hello \n World"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            tools:ignore="HardcodedText" />
     </ScrollView>
     <ImageButton
         android:id="@+id/icon_start"
