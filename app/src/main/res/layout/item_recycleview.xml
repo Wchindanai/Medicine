@@ -1,63 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     android:paddingBottom="10dp"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
-    android:paddingTop="10dp"
-    android:orientation="vertical">
+    android:paddingTop="10dp">
 
-    <!-- A CardView that contains a TextView -->
-    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/card_view"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        card_view:cardCornerRadius="4dp">
+        android:background="@color/cardview_light_background">
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
 
-            <RelativeLayout
+            <ImageView
+                android:id="@+id/item_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/item_name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/item_image"
+                android:text="Drug Name"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp" />
 
-                <ImageView
-                    android:id="@+id/item_image"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@mipmap/ic_launcher" />
+            <TextView
+                android:id="@+id/item_risk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_name"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/item_image"
+                android:text="Item Risk"
+                android:textSize="20sp" />
 
-                <TextView
-                    android:id="@+id/item_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_toEndOf="@+id/item_image"
-                    android:textColor="@color/colorPrimary"
-                    android:text="Drug Name"
-                    android:textSize="20sp" />
-                <TextView
-                    android:id="@+id/item_risk"
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
-                    android:layout_toEndOf="@+id/item_image"
-                    android:layout_below="@+id/item_name"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="10dp"
-                    android:text="Item Risk"
-                    android:textSize="20sp"
-                    />
+        </RelativeLayout>
 
-            </RelativeLayout>
+    </LinearLayout>
 
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
 </LinearLayout>
 
