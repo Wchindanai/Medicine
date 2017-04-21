@@ -7,48 +7,42 @@
     android:paddingBottom="10dp"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
-    android:paddingTop="10dp">
+    android:paddingTop="10dp"
+    android:background="@color/cardview_light_background">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/cardview_light_background">
+        android:layout_height="wrap_content">
 
-        <RelativeLayout
+        <ImageView
+            android:id="@+id/item_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/item_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/item_image"
+            android:text="Drug Name"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp" />
 
-            <ImageView
-                android:id="@+id/item_image"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@mipmap/ic_launcher" />
+        <TextView
+            android:id="@+id/item_risk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_name"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/item_image"
+            android:text="Item Risk"
+            android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/item_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_toEndOf="@+id/item_image"
-                android:text="Drug Name"
-                android:textColor="@color/colorPrimary"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/item_risk"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/item_name"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_toEndOf="@+id/item_image"
-                android:text="Item Risk"
-                android:textSize="20sp" />
-
-        </RelativeLayout>
-
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>
 
