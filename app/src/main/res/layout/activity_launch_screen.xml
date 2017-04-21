@@ -32,7 +32,7 @@
         android:gravity="center"
         android:layout_below="@+id/title_name"
         android:layout_marginTop="40dp"
-        android:textSize="20sp"
+        android:textSize="15dp"
         android:textColor="@color/cardview_light_background"
         android:background="@color/cardview_dark_background"
         android:text="รายละเอียดเกี่ยวกับแอพพลิเคชั่น"
