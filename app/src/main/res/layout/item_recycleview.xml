@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:layout_toEndOf="@+id/item_image"
             android:text="Drug Name"
             android:textColor="@color/colorPrimary"
@@ -40,7 +40,8 @@
             android:layout_marginTop="10dp"
             android:layout_toEndOf="@+id/item_image"
             android:text="Item Risk"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:visibility="invisible" />
 
     </RelativeLayout>
 

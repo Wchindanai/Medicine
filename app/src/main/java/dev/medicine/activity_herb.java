@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -19,8 +20,9 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class activity_herb extends AppCompatActivity {
+public class activity_herb extends AppCompatActivity implements SearchView.OnQueryTextListener{
     List<HerbModel> herb_list;
+    HerbRecyclerAdapter herbRecyclerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,8 @@ public class activity_herb extends AppCompatActivity {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.hasFixedSize();
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        recyclerView.setAdapter(new HerbRecyclerAdapter(this, herb_list));
+        herbRecyclerAdapter = new HerbRecyclerAdapter(this, herb_list);
+        recyclerView.setAdapter(herbRecyclerAdapter);
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
                 new LinearLayoutManager(getApplicationContext()).getOrientation());
         recyclerView.addItemDecoration(dividerItemDecoration);
@@ -74,7 +77,28 @@ public class activity_herb extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.appbar_search, menu);
         MenuItem item = menu.findItem(R.id.search_bar);
-
+        SearchView searchView = (SearchView)item.getActionView();
+        searchView.setQueryHint(getString(R.string.search_herb));
+        searchView.setOnQueryTextListener(this);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        newText = newText.toLowerCase();
+        ArrayList<HerbModel> newList = new ArrayList<>();
+        for(HerbModel herbModel: herb_list){
+            String name = herbModel.getName().toLowerCase();
+            if(name.contains(newText)){
+                newList.add(herbModel);
+            }
+        }
+        herbRecyclerAdapter.setFilter(newList);
+        return true;
     }
 }

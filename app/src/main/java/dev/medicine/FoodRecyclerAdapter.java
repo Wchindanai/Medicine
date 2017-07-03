@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
@@ -63,5 +64,11 @@ class FoodRecyclerAdapter extends RecyclerView.Adapter<FoodRecyclerAdapter.ViewH
                 }
             });
         }
+    }
+
+    public void setFilter(ArrayList<FoodModel> newList){
+        food_list = new ArrayList<>();
+        food_list.addAll(newList);
+        notifyDataSetChanged();
     }
 }

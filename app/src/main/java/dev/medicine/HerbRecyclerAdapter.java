@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -18,7 +19,7 @@ import java.util.List;
 
 class HerbRecyclerAdapter extends RecyclerView.Adapter<HerbRecyclerAdapter.ViewHoler> {
     private final Context context;
-    private final List<HerbModel> herb_list;
+    private List<HerbModel> herb_list;
 
     public HerbRecyclerAdapter(Context context, List<HerbModel> herb_list) {
         this.context = context;
@@ -42,6 +43,12 @@ class HerbRecyclerAdapter extends RecyclerView.Adapter<HerbRecyclerAdapter.ViewH
     @Override
     public int getItemCount() {
         return herb_list.size();
+    }
+
+    public void setFilter(ArrayList<HerbModel> newList) {
+        herb_list = new ArrayList<>();
+        herb_list.addAll(newList);
+        notifyDataSetChanged();
     }
 
     class ViewHoler extends RecyclerView.ViewHolder {

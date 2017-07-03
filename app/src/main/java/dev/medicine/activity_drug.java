@@ -7,7 +7,6 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -21,10 +20,13 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class activity_drug extends AppCompatActivity {
+public class activity_drug extends AppCompatActivity implements SearchView.OnQueryTextListener{
 
     private static final String TAG = "Activity Drug";
 
+    activity_drug activity_drug;
+
+    RecyclerAdapter recyclerAdapter;
     //Setting Model Drug
     private List<DrugModel> drug_list;
 
@@ -32,14 +34,14 @@ public class activity_drug extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drug);
-
         drug_list = new ArrayList<>();
 
         //Init Recycler View And Set Adapter
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.hasFixedSize();
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        recyclerView.setAdapter(new RecyclerAdapter(this, drug_list));
+        recyclerAdapter = new RecyclerAdapter(this, drug_list);
+        recyclerView.setAdapter(recyclerAdapter);
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
                 new LinearLayoutManager(getApplicationContext()).getOrientation());
         recyclerView.addItemDecoration(dividerItemDecoration);
@@ -82,7 +84,28 @@ public class activity_drug extends AppCompatActivity {
         inflater.inflate(R.menu.appbar_search, menu);
         MenuItem item = menu.findItem(R.id.search_bar);
         SearchView searchView = (SearchView)item.getActionView();
+        searchView.setQueryHint(getString(R.string.search_drug));
+        searchView.setOnQueryTextListener(this);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        newText = newText.toLowerCase();
+        ArrayList<DrugModel> newList = new ArrayList<>();
+        for(DrugModel drugModel: drug_list){
+            String name = drugModel.getName().toLowerCase();
+            if(name.contains(newText)){
+                newList.add(drugModel);
+            }
+        }
+        recyclerAdapter.setFilter(newList);
+        return true;
     }
 }
 

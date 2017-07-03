@@ -2,16 +2,14 @@ package dev.medicine;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
-
-import static android.R.attr.name;
 
 /**
  * Created by dream on 4/13/2017 AD.
@@ -21,7 +19,7 @@ class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
 
     private final Context context;
-    private final List<DrugModel> drug_list;
+    private List<DrugModel> drug_list;
 
     public RecyclerAdapter(Context context, List<DrugModel> drug_list) {
         this.context = context;
@@ -65,5 +63,11 @@ class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
                 }
             });
         }
+    }
+
+    public void setFilter(ArrayList<DrugModel> newList){
+        drug_list = new ArrayList<>();
+        drug_list.addAll(newList);
+        notifyDataSetChanged();
     }
 }
