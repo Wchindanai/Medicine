@@ -3,6 +3,7 @@ package dev.medicine;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -39,6 +40,9 @@ public class activity_drug extends AppCompatActivity {
         recyclerView.hasFixedSize();
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setAdapter(new RecyclerAdapter(this, drug_list));
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
+                new LinearLayoutManager(getApplicationContext()).getOrientation());
+        recyclerView.addItemDecoration(dividerItemDecoration);
 
         try {
             readDrugTable();

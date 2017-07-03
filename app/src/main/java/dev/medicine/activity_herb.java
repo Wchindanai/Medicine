@@ -3,6 +3,7 @@ package dev.medicine;
 import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
@@ -33,6 +34,9 @@ public class activity_herb extends AppCompatActivity {
         recyclerView.hasFixedSize();
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setAdapter(new HerbRecyclerAdapter(this, herb_list));
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
+                new LinearLayoutManager(getApplicationContext()).getOrientation());
+        recyclerView.addItemDecoration(dividerItemDecoration);
 
         try {
             readHerbTable();

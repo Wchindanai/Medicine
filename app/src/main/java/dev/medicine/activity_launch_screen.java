@@ -29,7 +29,7 @@ public class activity_launch_screen extends AppCompatActivity {
         start_btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(activity_launch_screen.this, MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), Login.class));
                 finish();
             }
 
