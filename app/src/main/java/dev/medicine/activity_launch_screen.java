@@ -1,12 +1,11 @@
 package dev.medicine;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
-import android.text.Spanned;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -26,10 +25,13 @@ public class activity_launch_screen extends AppCompatActivity {
             applicationDetail.setText(Html.fromHtml(getString(R.string.application_detail)));
         }
 
+        Typeface face = Typeface.createFromAsset(getAssets(),
+                "font/THSarabun.ttf");
+        applicationDetail.setTypeface(face);
         start_btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Login.class));
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
             }
 
