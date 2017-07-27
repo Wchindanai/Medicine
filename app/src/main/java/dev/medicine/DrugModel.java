@@ -9,15 +9,13 @@ class DrugModel {
     private String name ;
     private String how_to;
     private String risk;
-    private String note;
     private String reference;
 
-    public DrugModel(int id, String name, String how_to, String risk, String note, String reference) {
+    public DrugModel(int id, String name, String how_to, String risk, String reference) {
         this.id = id;
         this.name = name;
         this.how_to = how_to;
         this.risk = risk;
-        this.note = note;
         this.reference = reference;
     }
 
@@ -37,9 +35,6 @@ class DrugModel {
         return risk;
     }
 
-    public String getNote() {
-        return note;
-    }
 
     public String getReference() {
         return reference;
@@ -61,9 +56,6 @@ class DrugModel {
         this.risk = risk;
     }
 
-    public void setNote(String note) {
-        this.note = note;
-    }
 
     public void setReference(String reference) {
         this.reference = reference;

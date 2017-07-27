@@ -1,6 +1,7 @@
 package dev.medicine;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -34,10 +35,21 @@ class HerbRecyclerAdapter extends RecyclerView.Adapter<HerbRecyclerAdapter.ViewH
     }
 
     @Override
-    public void onBindViewHolder(ViewHoler holder, int position) {
+    public void onBindViewHolder(ViewHoler holder, final int position) {
         holder.herbImage.setImageResource(R.drawable.icon_herb_s);
         holder.herbName.setText(herb_list.get(position).getName());
-        holder.herbRisk.setText(herb_list.get(position).getRisk());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, item_detail.class);
+                intent.putExtra("title", herb_list.get(position).getName());
+                intent.putExtra("risk", herb_list.get(position).getRisk());
+                intent.putExtra("reference", herb_list.get(position).getReference());
+                intent.putExtra("howTo", herb_list.get(position).getHow_to());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -60,7 +72,6 @@ class HerbRecyclerAdapter extends RecyclerView.Adapter<HerbRecyclerAdapter.ViewH
             super(itemView);
             herbImage = (ImageView)itemView.findViewById(R.id.item_image);
             herbName = (TextView)itemView.findViewById(R.id.item_name);
-            herbRisk = (TextView)itemView.findViewById(R.id.item_risk);
 
             itemView.setOnClickListener(new View.OnClickListener(){
                 @Override

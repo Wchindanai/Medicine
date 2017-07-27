@@ -1,6 +1,7 @@
 package dev.medicine;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,10 +35,20 @@ class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.drugImage.setImageResource(R.drawable.icon_drug_s);
         holder.drugName.setText(drug_list.get(position).getName());
-        holder.drugRisk.setText(drug_list.get(position).getRisk());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, item_detail.class);
+                intent.putExtra("title", drug_list.get(position).getName());
+                intent.putExtra("risk", drug_list.get(position).getRisk());
+                intent.putExtra("reference", drug_list.get(position).getReference());
+                intent.putExtra("howTo", drug_list.get(position).getHow_to());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -54,14 +65,6 @@ class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
             super(itemView);
             drugImage = (ImageView)itemView.findViewById(R.id.item_image);
             drugName = (TextView)itemView.findViewById(R.id.item_name);
-            drugRisk = (TextView)itemView.findViewById(R.id.item_risk);
-
-            itemView.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v) {
-
-                }
-            });
         }
     }
 

@@ -52,7 +52,7 @@ public class activity_herb extends AppCompatActivity implements SearchView.OnQue
     private void readHerbTable() throws UnsupportedEncodingException {
         AssetManager assetManager = getAssets();
         try {
-            InputStream herbStream = assetManager.open("herb/herb_table.csv");
+            InputStream herbStream = assetManager.open("herb/herb.csv");
             InputStreamReader herbReader = new InputStreamReader(herbStream);
             CSVReader csvReader = new CSVReader(herbReader);
             csvReader.readNext();
@@ -68,7 +68,7 @@ public class activity_herb extends AppCompatActivity implements SearchView.OnQue
     }
 
     private void addDrugToObject(int id, String[] line) {
-        HerbModel herbModel = new HerbModel(id, line[0], line[1], line[2], line[3], line[4]);
+        HerbModel herbModel = new HerbModel(Integer.parseInt(line[0]), line[1], line[2], line[3], line[4]);
         herb_list.add(herbModel);
     }
 

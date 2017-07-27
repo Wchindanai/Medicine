@@ -1,8 +1,8 @@
 package dev.medicine;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +11,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.content.ContentValues.TAG;
 
 /**
  * Created by dream on 4/13/2017 AD.
@@ -35,10 +33,21 @@ class FoodRecyclerAdapter extends RecyclerView.Adapter<FoodRecyclerAdapter.ViewH
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.foodImage.setImageResource(R.drawable.icon_food_s);
         holder.foodName.setText(food_list.get(position).getName());
-        holder.foodRisk.setText(food_list.get(position).getRisk());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, item_detail.class);
+                intent.putExtra("title", food_list.get(position).getName());
+                intent.putExtra("risk", food_list.get(position).getRisk());
+                intent.putExtra("reference", food_list.get(position).getReference());
+                intent.putExtra("howTo", food_list.get(position).getHow_to());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -50,19 +59,10 @@ class FoodRecyclerAdapter extends RecyclerView.Adapter<FoodRecyclerAdapter.ViewH
         ImageView foodImage;
         TextView foodName;
         TextView foodRisk;
-        public ViewHolder(View itemView) {
+        public ViewHolder(final View itemView) {
             super(itemView);
             foodImage = (ImageView)itemView.findViewById(R.id.item_image);
             foodName = (TextView)itemView.findViewById(R.id.item_name);
-            foodRisk = (TextView)itemView.findViewById(R.id.item_risk);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View v) {
-                    Log.i(TAG, "Food Click Item"+ foodName);
-                }
-            });
         }
     }
 

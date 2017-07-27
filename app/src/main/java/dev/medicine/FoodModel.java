@@ -9,15 +9,13 @@ public class FoodModel {
     private String name;
     private String how_to;
     private String risk;
-    private String note;
     private String reference;
 
-    public FoodModel(int id, String name, String how_to, String risk, String note, String reference) {
+    public FoodModel(int id, String name, String how_to, String risk, String reference) {
         this.id = id;
         this.name = name;
         this.how_to = how_to;
         this.risk = risk;
-        this.note = note;
         this.reference = reference;
     }
 
@@ -35,10 +33,6 @@ public class FoodModel {
 
     public String getRisk() {
         return risk;
-    }
-
-    public String getNote() {
-        return note;
     }
 
     public String getReference() {
@@ -59,10 +53,6 @@ public class FoodModel {
 
     public void setRisk(String risk) {
         this.risk = risk;
-    }
-
-    public void setNote(String note) {
-        this.note = note;
     }
 
     public void setReference(String reference) {

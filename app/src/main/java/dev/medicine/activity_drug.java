@@ -58,7 +58,7 @@ public class activity_drug extends AppCompatActivity implements SearchView.OnQue
     private void readDrugTable() throws UnsupportedEncodingException {
         AssetManager assetManager = getAssets();
         try {
-            InputStream drugStream = assetManager.open("drug/drug_table.csv");
+            InputStream drugStream = assetManager.open("drug/medicine.csv");
             InputStreamReader drugReader = new InputStreamReader(drugStream);
             CSVReader csvReader = new CSVReader(drugReader);
             String[] line;
@@ -74,7 +74,7 @@ public class activity_drug extends AppCompatActivity implements SearchView.OnQue
     }
 
     private void addDrugToObject(int lineNo, String[] line) {
-        DrugModel drug = new DrugModel(lineNo, line[0], line[1], line[2], line[3], line[4]);
+        DrugModel drug = new DrugModel(Integer.parseInt(line[0]), line[1], line[2], line[3], line[4]);
         drug_list.add(drug);
     }
 

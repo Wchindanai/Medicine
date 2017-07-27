@@ -50,7 +50,7 @@ public class activity_food extends AppCompatActivity implements SearchView.OnQue
     private void readFoodTable() throws UnsupportedEncodingException {
         AssetManager assetManager = getAssets();
         try {
-            InputStream foodStream = assetManager.open("food/food_table.csv");
+            InputStream foodStream = assetManager.open("food/supplementary.csv");
             InputStreamReader foodReader = new InputStreamReader(foodStream);
             CSVReader csvReader = new CSVReader(foodReader);
             csvReader.readNext();
@@ -65,7 +65,7 @@ public class activity_food extends AppCompatActivity implements SearchView.OnQue
     }
 
     private void addFoodToObject(int id, String[] line) {
-        FoodModel food = new FoodModel(id, line[0], line[1], line[2], line[3], line[4]);
+        FoodModel food = new FoodModel(Integer.parseInt(line[0]), line[1], line[2], line[3], line[4]);
         food_list.add(food);
     }
 
