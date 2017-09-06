@@ -9,55 +9,6 @@
     android:paddingLeft="15dp"
     android:paddingRight="15dp"
     android:paddingTop="10dp"
-    android:background="@drawable/pastel_wallpaper"
+    android:background="@drawable/splash_screen"
     tools:context="dev.medicine.MainActivity">
-
-    <TextView
-        android:id="@+id/title_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:textSize="36sp"
-        android:gravity="center"
-        android:textColor="@color/cardview_dark_background"
-        android:text="MOM MED"
-        tools:ignore="HardcodedText" />
-    <TextView
-        android:id="@+id/title_detail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="10dp"
-        android:gravity="center"
-        android:layout_below="@+id/title_name"
-        android:layout_marginTop="40dp"
-        android:textSize="15dp"
-        android:textColor="@color/cardview_light_background"
-        android:background="@color/cardview_dark_background"
-        android:text="รายละเอียดเกี่ยวกับแอพพลิเคชั่น"
-        tools:ignore="HardcodedText" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/title_detail"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        app:srcCompat="@drawable/application_detail" />
-
-    <ImageButton
-        android:id="@+id/icon_start"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="10dp"
-        android:background="@drawable/start_application"
-        android:scaleType="fitCenter"
-        tools:ignore="ContentDescription"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="14dp" />
-
 </RelativeLayout>

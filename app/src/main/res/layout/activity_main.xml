@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -11,39 +12,38 @@
     android:background="@drawable/pastel_wallpaper"
     tools:context="dev.medicine.MainActivity">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
     <ImageButton
         android:id="@+id/icon_drug"
-        android:layout_margin="10dp"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:background="@drawable/icon_drug_s" />
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:background="@drawable/icon_drug_s"
+        android:layout_marginLeft="-2dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp" />
 
     <ImageButton
         android:id="@+id/icon_food"
-        android:layout_margin="10dp"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_alignParentRight="true"
-        android:background="@drawable/icon_food_s" />
+        android:background="@drawable/icon_food_s"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <ImageButton
         android:id="@+id/icon_herb"
-        android:layout_margin="10dp"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_below="@id/icon_drug"
-        android:background="@drawable/icon_herb_s" />
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_below="@+id/icon_drug"
+        android:layout_marginBottom="80dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/icon_herb_s"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
-    <ImageButton
-        android:id="@+id/icon_help"
-        android:layout_margin="10dp"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/icon_drug"
-        android:background="@drawable/icon_help_s" />
-
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

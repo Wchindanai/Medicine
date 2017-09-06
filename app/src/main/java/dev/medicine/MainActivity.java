@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
         ImageButton drug_btn = (ImageButton)findViewById(R.id.icon_drug);
         ImageButton herb_btn = (ImageButton)findViewById(R.id.icon_herb);
         ImageButton food_btn = (ImageButton)findViewById(R.id.icon_food);
-        ImageButton help_btn = (ImageButton)findViewById(R.id.icon_help);
 
 
         drug_btn.setOnClickListener(new View.OnClickListener(){
@@ -38,12 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), activity_food.class));
             }
         });
-        help_btn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), activity_help.class));
-            }
-        });
+
     }
 
 }
