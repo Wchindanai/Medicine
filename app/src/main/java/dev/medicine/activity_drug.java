@@ -24,8 +24,6 @@ public class activity_drug extends AppCompatActivity implements SearchView.OnQue
 
     private static final String TAG = "Activity Drug";
 
-    activity_drug activity_drug;
-
     RecyclerAdapter recyclerAdapter;
     //Setting Model Drug
     private List<DrugModel> drug_list;

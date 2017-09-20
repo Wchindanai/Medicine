@@ -38,7 +38,8 @@
             android:name=".item_detail"
             android:screenOrientation="portrait" />
         <activity android:name=".MainActivity2" />
-        <activity android:name=".HowToUseActivity"></activity>
+        <activity android:name=".HowToUseActivity" />
+        <activity android:name=".HowToUse2"></activity>
     </application>
 
 </manifest>
